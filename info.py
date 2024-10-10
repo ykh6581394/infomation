@@ -25,9 +25,13 @@ with tab1:
     
     if st.button("Search"):
         with st.spinner('Wait for it...'):
-            df = pd.DataFrame(list(unit.iloc[0]),index=unit.columns,columns=["Info"])
-            st.table(df)
+            try:
+                df = pd.DataFrame(list(unit.iloc[0]),index=unit.columns,columns=["Info"])
+                st.table(df)
         
+            except:
+                st.text("No Entry, Enter Again")
+
 
 
 
